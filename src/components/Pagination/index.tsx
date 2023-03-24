@@ -1,5 +1,5 @@
-import { Nav, PageButton } from './styled';
 import { PaginationType } from '@common/interface';
+import { Nav, PageButton } from './styled';
 
 function Paginaton({ goPrev, goNext, goPageNum, lastPage, currentPage, pages }: PaginationType) {
   return (

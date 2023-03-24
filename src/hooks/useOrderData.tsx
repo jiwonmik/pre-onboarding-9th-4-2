@@ -1,7 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
-import { QueryStringKey } from '@common/order';
 import { IData } from '@common/interface';
-import usePagination from './usePagination';
+import { QueryStringKey } from '@common/order';
 
 function useOrderData(todayData: IData[]) {
   const [searchParams] = useSearchParams();
@@ -9,8 +8,6 @@ function useOrderData(todayData: IData[]) {
   const order = searchParams.get(QueryStringKey.ORDER);
   const status = searchParams.get(QueryStringKey.STATUS);
   const name = searchParams.get(QueryStringKey.NAME);
-
-  const { startIdx, lastIdx } = usePagination(todayData.length, 50, 5);
 
   let orderData: IData[] = todayData;
 

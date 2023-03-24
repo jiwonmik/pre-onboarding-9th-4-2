@@ -1,12 +1,30 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { ProvidersWrapper } from '@utils/test.wrapper';
+import useData from '@hooks/useData';
+import useOrderData from '@hooks/useOrderData';
+import usePagination from '@hooks/usePagination';
 import Paginaton from '.';
+
+const { todayData } = useData();
+const { orderData } = useOrderData(todayData);
+
+const { goPrev, goNext, goPageNum, lastPage, currentPage, startIdx, lastIdx, pages } =
+  usePagination(orderData.length, 50, 5);
 
 test('renders the pagination without separator', async () => {
   //ARRANGE
   render(
     <ProvidersWrapper route="/admin">
-      <Paginaton />
+      <Paginaton
+        goPrev={goPrev}
+        goNext={goNext}
+        goPageNum={goPageNum}
+        lastPage={lastPage}
+        currentPage={currentPage}
+        startIdx={startIdx}
+        lastIdx={lastIdx}
+        pages={pages}
+      />
     </ProvidersWrapper>
   );
   // There are 6 page number buttons displaying page numbers
@@ -26,7 +44,16 @@ test('renders the pagination first page selected', async () => {
   //ARRANGE
   render(
     <ProvidersWrapper route="/admin">
-      <Paginaton />
+      <Paginaton
+        goPrev={goPrev}
+        goNext={goNext}
+        goPageNum={goPageNum}
+        lastPage={lastPage}
+        currentPage={currentPage}
+        startIdx={startIdx}
+        lastIdx={lastIdx}
+        pages={pages}
+      />{' '}
     </ProvidersWrapper>
   );
   //EXPECT
@@ -48,7 +75,16 @@ test('renders the pagination third page selected', async () => {
   //ARRANGE
   render(
     <ProvidersWrapper route="/admin">
-      <Paginaton />
+      <Paginaton
+        goPrev={goPrev}
+        goNext={goNext}
+        goPageNum={goPageNum}
+        lastPage={lastPage}
+        currentPage={currentPage}
+        startIdx={startIdx}
+        lastIdx={lastIdx}
+        pages={pages}
+      />{' '}
     </ProvidersWrapper>
   );
 
@@ -70,7 +106,16 @@ test('renders the pagination last page selected', async () => {
   //ARRANGE
   render(
     <ProvidersWrapper route="/admin">
-      <Paginaton />
+      <Paginaton
+        goPrev={goPrev}
+        goNext={goNext}
+        goPageNum={goPageNum}
+        lastPage={lastPage}
+        currentPage={currentPage}
+        startIdx={startIdx}
+        lastIdx={lastIdx}
+        pages={pages}
+      />{' '}
     </ProvidersWrapper>
   );
 

@@ -1,8 +1,8 @@
 import { TriangleDownIcon, TriangleUpIcon, UpDownIcon } from '@chakra-ui/icons';
 import { Icon, Th, Thead, Tr } from '@chakra-ui/react';
 import { useSearchParams } from 'react-router-dom';
+import { TableHeadProps } from '@common/interface';
 import { OrderKey, OrderType, QueryStringKey } from '@common/order';
-import { TableHeadProps } from '@common/types';
 
 function AdminTableHead({ columns }: TableHeadProps) {
   const [params, setParams] = useSearchParams();

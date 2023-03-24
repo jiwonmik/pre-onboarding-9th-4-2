@@ -1,7 +1,7 @@
 import { fetchData } from '@api/api';
 import { useQuery } from 'react-query';
+import { DAY, MONTH, YEAR } from '@common/consts';
 import { IData } from '@common/interface';
-import { YEAR, MONTH, DAY } from '@common/consts';
 
 function useSortableTable() {
   const { isLoading, isError, data, error } = useQuery<IData[], Error>('switchone', fetchData, {

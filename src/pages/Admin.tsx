@@ -3,7 +3,6 @@ import { LIMIT } from '@common/consts';
 import useData from '@hooks/useData';
 import Filter from '@components/Admin/AdminFilter';
 import AdminTable from '@components/Admin/AdminTable';
-import useOrderData from '@hooks/useOrderData';
 
 function Admin() {
   const { isLoading, isError, error, todayData } = useData();

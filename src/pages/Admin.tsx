@@ -1,15 +1,12 @@
 import { Flex, Skeleton, Stack } from '@chakra-ui/react';
-
-import { LIMIT } from '@common/order';
-
+import { LIMIT } from '@common/consts';
 import useData from '@hooks/useData';
-
 import Filter from '@components/Admin/AdminFilter';
 import AdminTable from '@components/Admin/AdminTable';
-import Paginaton from '@components/Pagination';
+import useOrderData from '@hooks/useOrderData';
 
 function Admin() {
-  const { isLoading, isError, error } = useData();
+  const { isLoading, isError, error, todayData } = useData();
 
   if (isLoading) {
     return (
@@ -36,8 +33,7 @@ function Admin() {
       <Flex aria-label="admin-page" justifyContent={'center'} height="900px">
         <Flex flexDir={'column'}>
           <Filter />
-          <AdminTable />
-          <Paginaton />
+          <AdminTable todayData={todayData} />
         </Flex>
       </Flex>
     </>

@@ -1,7 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
-
 import { ProvidersWrapper } from '@utils/test.wrapper';
-
 import Admin from './Admin';
 
 describe('Admin', () => {

@@ -1,14 +1,14 @@
 import { Badge, Tbody, Td, Tr } from '@chakra-ui/react';
+import { TableProps } from '@common/interface';
+import usePagination from '@hooks/usePagination';
 
-import useData from '@hooks/useData';
-
-function AdminTableBody() {
-  const { tableData } = useData();
+function AdminTableBody({ todayData }: TableProps) {
+  const { startIdx, lastIdx } = usePagination(todayData.length, 50, 5);
 
   return (
     <Tbody aria-label="table-body">
-      {tableData.length !== 0 ? (
-        tableData.map((data) => {
+      {todayData.length !== 0 ? (
+        todayData.slice(startIdx, lastIdx + 1).map((data) => {
           return (
             <Tr key={data.id}>
               <Td>{data.id}</Td>

@@ -1,7 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-
 import { ProvidersWrapper } from '@utils/test.wrapper';
-
 import Paginaton from '.';
 
 test('renders the pagination without separator', async () => {

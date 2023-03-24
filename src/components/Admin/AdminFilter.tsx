@@ -11,7 +11,6 @@ import {
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
 import { QueryStringKey, StatusKey } from '@common/order';
 
 function Filter() {
@@ -27,8 +26,7 @@ function Filter() {
 
   const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    params.delete(QueryStringKey.OFFSET);
-    params.delete(QueryStringKey.LIMIT);
+    params.delete(QueryStringKey.PAGE);
     params.set(QueryStringKey.NAME, searchName.toLocaleLowerCase());
     setParams(params);
   };

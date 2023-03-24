@@ -1,5 +1,3 @@
-export const LIMIT = 50;
-
 export type OrderType = 'asc' | 'dec' | 'default';
 export type StatusType = 'all' | 'true' | 'false';
 
@@ -18,8 +16,7 @@ export const StatusKey = {
 export const QueryStringKey = {
   SORT: 'sort',
   ORDER: 'order',
-  OFFSET: 'offset',
-  LIMIT: 'limit',
+  PAGE: 'page',
   STATUS: 'status',
   NAME: 'name',
 };

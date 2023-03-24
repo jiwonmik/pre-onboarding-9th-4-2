@@ -1,13 +1,19 @@
 import { Box, Heading, Table, TableContainer, VStack } from '@chakra-ui/react';
 import { useMemo } from 'react';
-
-import { DAY, MONTH, YEAR } from '@utils/tableFunc';
-
-import { IColumns } from '../../common/types';
+import { YEAR, MONTH, DAY } from '@common/consts';
+import { IColumns, TableProps } from '@common/interface';
 import AdminTableBody from './AdminTableBody';
 import AdminTableHead from './AdminTableHead';
+import Paginaton from '@components/Pagination';
+import usePagination from '@hooks/usePagination';
+import useOrderData from '@hooks/useOrderData';
 
-function AdminTable() {
+function AdminTable({ todayData }: TableProps) {
+  const { orderData } = useOrderData(todayData);
+
+  const { goPrev, goNext, goPageNum, lastPage, currentPage, startIdx, lastIdx, pages } =
+    usePagination(orderData.length, 50, 5);
+
   const columns = useMemo<IColumns[]>(
     () => [
       {
@@ -60,11 +66,21 @@ function AdminTable() {
           <TableContainer minWidth={'900px'}>
             <Table aria-label="admin-table" variant={'striped'} colorScheme="blackAlpha">
               <AdminTableHead columns={columns} />
-              <AdminTableBody />
+              <AdminTableBody todayData={orderData} />
             </Table>
           </TableContainer>
         </Box>
       </VStack>
+      <Paginaton
+        goPrev={goPrev}
+        goNext={goNext}
+        goPageNum={goPageNum}
+        lastPage={lastPage}
+        currentPage={currentPage}
+        startIdx={startIdx}
+        lastIdx={lastIdx}
+        pages={pages}
+      />
     </>
   );
 }

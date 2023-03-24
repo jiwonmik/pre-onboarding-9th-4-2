@@ -1,7 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-
 import { ProvidersWrapper } from '@utils/test.wrapper';
-
 import Admin from '@pages/Admin';
 
 test('should filter status true when radio true clicked', async () => {

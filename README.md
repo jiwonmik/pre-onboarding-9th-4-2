@@ -1,8 +1,39 @@
-# 4주차 과제
+# 4주차 과제 (4th Project)
 
-주문내역 관리 어드민 페이지 구현
+주문내역 관리 어드민 페이지 구현(Order List Management Page)
+- [Here is the demo](https://pre-onboarding-9th-4-2-jiwonmik.vercel.app/).
 
-## 팀원 구성표
+## 📑Table of Contents
+- [Features](#features)
+- [Technologies](#technologies)
+- [Setup](#setup)
+
+## ✨ Features
+- Order list Pagination
+- Sort by `order id`, `transaction time`
+- Filter by `status`
+- Search by `customer name`
+- Test code with **Vitest** and **RTL(React Testing Library)**
+
+## 🔨 Technologies
+- Framework: `React(Vite)`, `Typescript(Javascript)`
+- Routing: `react-router-dom@v6`
+- State management: `react-query`
+- Code Formatting: `ESLint`
+- Styling: `Chakra UI`
+- Test Framework: `Vitest`, `RTL(React Testing Library)`
+
+## 💻 Setup
+To run this project, install it locally using npm:
+
+```shell
+git clone https://github.com/jiwonmik/pre-onboarding-9th-4-2.git
+cd pre-onboarding-9th-4-2
+npm install
+npm run dev
+```
+
+## 🙋🏻‍♀️ 팀원 구성표 (Team Members)
 
 <table>
   <tr>
@@ -68,7 +99,7 @@
   </tr>
 </table>
 
-## commit convention
+## ⚙️ commit convention
 
 | Tag Name | Description      |
 | -------- | ---------------- |

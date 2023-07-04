@@ -2,6 +2,7 @@
 
 주문내역 관리 어드민 페이지 구현(Order List Management Page)
 - [Here is the demo](https://pre-onboarding-9th-4-2-jiwonmik.vercel.app/).
+- [Peer Learning(Code reviews and feedbacks in Pull-request tab)](https://github.com/pre-onboarding-internship-team2/pre-onboarding-9th-4-2)
 
 ## 📑Table of Contents
 - [Features](#features)
